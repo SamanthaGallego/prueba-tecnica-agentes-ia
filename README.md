@@ -45,3 +45,13 @@ El agente consulta de forma automatizada el JSON generado para informar al usuar
 ### Respuesta final
 ![Respuesta final](diagramas/reto2_4.png)
 
+## Reto 3______
+![ORQUESTADOR](diagramas/ORQUESTADOR.png)
+
+Para el enrutamiento inteligente, se ha adoptado un enfoque de Clasificación de Intenciones (Intent Classification) mediante el uso de Frases Desencadenantes en cada módulo especializado.
+
+Capa de Orquestación: El tema 'Saludo' captura la intención general del usuario.
+
+Capa de Enrutamiento: El motor de IA de Copilot Studio procesa la entrada del usuario y, comparándola contra las frases configuradas en los temas 'Reto 1' y 'Reto 2', realiza un enrutamiento dinámico automático.
+
+Ventaja: Este permite que el bot entienda variaciones del lenguaje natural (NLP) sin necesidad de programar manualmente cada posible forma de pedir un certificado.
