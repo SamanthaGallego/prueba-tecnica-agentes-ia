@@ -20,3 +20,28 @@ El agente consume una API a través de una solicitud HTTP POST, enviando los dat
 ### 4. Manejo de Errores y Respuesta Final (Fallback)
 Se evalúa la respuesta del servidor. Si es exitosa, se entrega el PDF; si falla, se realiza una transferencia (handoff) a un agente humano.
 ![Fallback](diagramas/reto1_4.png)
+
+## Reto 2 ___________________________________________
+## Reto 2: Scripting de Automatización (Python) y Agente TI
+
+### Script de Python
+El script `filtro_tickets.py` automatiza la lectura y filtrado de tickets críticos (Estado: "Pendiente", Prioridad: "Alta") desde un archivo `.txt` delimitado por punto y coma (`;`).
+
+**Cómo ejecutar:**
+1. Asegúrate de tener Python instalado.
+2. Coloca tu archivo `tickets.txt` en la misma carpeta.
+3. Ejecuta en terminal: `python filtro_tickets.py`
+4. El sistema generará automáticamente `tickets_criticos.json`.
+
+### Arquitectura del Agente de Soporte TI
+El agente consulta de forma automatizada el JSON generado para informar al usuario sobre su carga de trabajo crítica.
+
+### 1. Desencadenador (Consultas sobre el estado de los tickets de soporte de TI.)
+![Desencadenador](diagramas/reto2_1.png)
+### Llamado a la accion solicitud HTTP
+![Solicitud HTTP](diagramas/reto2_2.png)
+### Conteo de tickets críticos
+![Numero de tickets críticos](diagramas/reto2_3.png)
+### Respuesta final
+![Respuesta final](diagramas/reto2_4.png)
+
